@@ -1,23 +1,58 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import GSAP from '../views/GSAP.vue'
+import SimpleTransition from '../views/SimpleTransition.vue'
+import GroupTransition from '../views/GroupTransition.vue'
+import JSHook from '../views/JSHook.vue'
+import State from '../views/State.vue'
+import GsapTimeline from '../views/GsapTimeline.vue'
+import GsapNestedTimeline from '../views/GsapNestedTimeline.vue'
+
 
 Vue.use(VueRouter)
 
   const routes = [
+
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'SimpleTransition',
+    component: SimpleTransition
+  },
+
+  {
+    path: '/gsap',
+    name: 'GSAP',
+    component: GSAP
+  },
+
+  {
+    path: '/group',
+    name: 'Group',
+    component: GroupTransition
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/hooks',
+    name: 'JSHook',
+    component: JSHook
+  },
+
+  {
+    path: '/gsap-state',
+    name: 'State',
+    component: State
+  },
+
+  {
+    path: '/gsap-timeline',
+    name: 'Timeline',
+    component: GsapTimeline
+  },
+
+  {
+    path: '/gsap-nested-timeline',
+    name: 'GsapNestedTimeline',
+    component: GsapNestedTimeline
+  },
 ]
 
 const router = new VueRouter({
